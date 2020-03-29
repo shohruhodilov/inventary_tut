@@ -97,18 +97,18 @@ def delete_laptop(request, pk):
      Laptop.objects.filter(id=pk).delete()
      items = Laptop.objects.all()
      context = {'items':items}
-     return render(request, 'index.html', context)
+     return redirect('laptop_views')
 
 
 def delete_desktop(request, pk):
     Desktop.objects.filter(id=pk).delete()
     items = Desktop.objects.all()
     context = {'items': items}
-    return render(request, 'index.html', context)
+    return redirect('desktop_views')
 
 
 def delete_mobile(request, pk):
     Mobile.objects.filter(id=pk).delete()
     items = Mobile.objects.all()
     context = {'items': items}
-    return render(request, 'index.html', context)
+    return redirect('mobile_views')
